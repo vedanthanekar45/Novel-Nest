@@ -1,5 +1,6 @@
 import React from "react"
 import toast from "react-hot-toast"
+import { useAuthContext } from "../context/authContext.jsx";
 
 function Register() {
 
@@ -11,12 +12,12 @@ function Register() {
         password: ''
     })
 
-    // const { setAuthUser } = useAuthContext();
+    const { setAuthUser } = useAuthContext();
 
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5000/auth/signup', {
+            const response = await fetch('http://localhost:3000/api/auth/signup', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -35,7 +36,7 @@ function Register() {
                 // local storage
                 localStorage.setItem("chat-user", JSON.stringify(result))
                 // context
-                // setAuthUser(result);
+                setAuthUser(result);
               } else {
                 console.error('Registration failed:', response.statusText);
               }
@@ -74,7 +75,7 @@ function Register() {
                         autoComplete='off' name="password" type="password" placeholder="Set Password"
                         className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
 
-                        <button className="bg-green-700 h-12 rounded-xl w-full text-white">Register</button>
+                        <button type="submit" className="bg-green-700 h-12 rounded-xl w-full text-white">Register</button>
                     </form>
                     <div className="blog-title flex justify-center z-2 text-2xl mt-6">
                         <h1>Already a user? Login <a href='/login' className="text-green-700">here!</a></h1>

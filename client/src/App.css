@@ -40,6 +40,13 @@ nav {
   height: 45px;
 }
 
+.username-butt {
+  margin-left: 50px;
+  margin-top: 32px;
+  width: auto;
+  padding: 15px;
+}
+
 /* CSS FOR GALLERY */
 .banner-text {
   font-family: "Zilla Slab", serif;

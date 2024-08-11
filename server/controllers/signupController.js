@@ -3,7 +3,7 @@ import bcrypt from "bcrypt"
 import generateToken from "./generateToken.js"
 
 // SignUp or Registration function
-export const signup = async (req, res) => {
+const signup = async (req, res) => {
     try {
 
         // Taking User Inputs from the frontend
@@ -34,7 +34,7 @@ export const signup = async (req, res) => {
         // If new user is successfully created then generate tokens and cookie for them
         if (newUser) {
             // Generate JWT Token
-            const token = generateToken(newUser);
+            const token = generateToken(newUser, res);
 
             res.cookie('token', token, {
                 httpOnly: true,   // Cannot be accessed by client-side JavaScript

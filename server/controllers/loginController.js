@@ -2,7 +2,7 @@ import User from "../models/userModel.js"
 import bcrypt from "bcrypt"
 import generateToken from "./generateToken.js"
 
-export const login = async (req, res) => {
+const login = async (req, res) => {
     try {
 
         // Taking User Inputs from the input fields
@@ -21,7 +21,7 @@ export const login = async (req, res) => {
 
         /* Token and cookie are generated for the user if login is successfull. This function isn't built-in.
            It is defined in the generateToken.js file in utilities folder */
-        const token = generateToken(user);
+        const token = generateToken(user, res);
         res.cookie('jwt', token, {
             maxAge: 5 * 24 * 60 * 60 * 1000, // 5 days
             httpOnly: true,
