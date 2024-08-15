@@ -36,12 +36,12 @@ const signup = async (req, res) => {
             // Generate JWT Token
             const token = generateToken(newUser, res);
 
-            res.cookie('token', token, {
-                httpOnly: true,   // Cannot be accessed by client-side JavaScript
-                secure: process.env.NODE_ENV === 'production', // Cookie sent only over HTTPS
-                sameSite: 'strict', // Prevent CSRF attacks
-                maxAge: 60 * 60 * 1000 // 1 hour
-            });
+            // res.cookie('token', token, {
+            //     httpOnly: true,   // Cannot be accessed by client-side JavaScript
+            //     secure: process.env.NODE_ENV === 'production', // Cookie sent only over HTTPS
+            //     sameSite: 'strict', // Prevent CSRF attacks
+            //     maxAge: 60 * 60 * 1000 // 1 hour
+            // });
 
             await newUser.save();
             res.status(201).json({

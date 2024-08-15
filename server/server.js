@@ -23,9 +23,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use("/api/auth", authRoutes);
+app.use("/auth", authRoutes)
 
-app.listen(() => {
+app.listen(port, () => {
     connectMongo();
     console.log(`Server's connected to port ${port}`);
 })

@@ -22,12 +22,6 @@ const login = async (req, res) => {
         /* Token and cookie are generated for the user if login is successfull. This function isn't built-in.
            It is defined in the generateToken.js file in utilities folder */
         const token = generateToken(user, res);
-        res.cookie('jwt', token, {
-            maxAge: 5 * 24 * 60 * 60 * 1000, // 5 days
-            httpOnly: true,
-            sameSite: 'strict',
-            secure: process.env.NODE_ENV !== 'development',
-        });
 
         // If login is successful, then this will return a Javascript object containing user details
         res.status(201).json({

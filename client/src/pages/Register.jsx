@@ -17,7 +17,7 @@ function Register() {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3000/api/auth/signup', {
+            const response = await fetch('http://localhost:5000/auth/signup', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ function Register() {
                         autoComplete='off' name="password" type="password" placeholder="Set Password"
                         className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
 
-                        <button type="submit" className="bg-green-700 h-12 rounded-xl w-full text-white">Register</button>
+                        <button className="bg-green-700 h-12 rounded-xl w-full text-white">Register</button>
                     </form>
                     <div className="blog-title flex justify-center z-2 text-2xl mt-6">
                         <h1>Already a user? Login <a href='/login' className="text-green-700">here!</a></h1>

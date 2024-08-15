@@ -1,9 +1,6 @@
-import useLogout from "../../hooks/useLogout";
-
 function Buttons () {
 
     const storedUser = localStorage.getItem("chat-user");
-    const {logout} = useLogout();
 
     if (!storedUser) {
         return (
@@ -30,12 +27,9 @@ function Buttons () {
         const user = JSON.parse(storedUser);
         return (
             <>
-                <a href="#"><div>
-                    <h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">{user.userName}</h3>
+                <a href="#"><div className="avatar bottom-4">
+                    <img className="webpage-butt size-16 rounded-full" src={user.profilePic} />
                 </div></a>
-                <button type="submit" onClick={logout}>
-                    <h3 className="webpage-butt text-xl text-center mb-[8px] hover:text-[#0d9221]">Logout</h3>
-                </button>
             </>
         )
     }
