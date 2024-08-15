@@ -20,9 +20,6 @@ function Navbar() {
                         <a href="#"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
                             About Us
                         </h3></a>
-                        <a href="#"><h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">
-                            Docs
-                        </h3></a>
                         <Buttons />
                     </div>
                 </nav>

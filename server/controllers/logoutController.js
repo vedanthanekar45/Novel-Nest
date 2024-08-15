@@ -1,4 +1,4 @@
-export const logout = (req, res) => {
+const logout = (req, res) => {
     try {
         // To logout, simply set the age of the cookie to zero. If successful, return a message "Logged out successdully".
         res.cookie("jwt", "", {

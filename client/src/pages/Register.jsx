@@ -1,5 +1,6 @@
 import React from "react"
 import toast from "react-hot-toast"
+import { useAuthContext } from "../context/authContext.jsx";
 
 function Register() {
 
@@ -11,7 +12,7 @@ function Register() {
         password: ''
     })
 
-    // const { setAuthUser } = useAuthContext();
+    const { setAuthUser } = useAuthContext();
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -35,7 +36,7 @@ function Register() {
                 // local storage
                 localStorage.setItem("chat-user", JSON.stringify(result))
                 // context
-                // setAuthUser(result);
+                setAuthUser(result);
               } else {
                 console.error('Registration failed:', response.statusText);
               }

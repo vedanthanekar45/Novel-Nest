@@ -6,7 +6,7 @@ import bodyParser from "body-parser"
 
 import authRoutes from "./routes/authRoutes.js"
 import connectMongo from "./db/connectToMongo.js"
-import protectRoute from "./middleware/protectRoute.js"
+// import protectRoute from "./middleware/protectRoute.js"
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,12 +17,15 @@ app.use(cookieParser());
 
 const port = process.env.port;
 
-app.use("/api/auth", authRoutes);
-app.use("/api/protected", protectRoute, (req, res) => {
-    res.status(200).json({message: "This is a protected route.", user: req.user})
-})
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
 
-app.listen(() => {
+app.use("/auth", authRoutes)
+
+app.listen(port, () => {
     connectMongo();
     console.log(`Server's connected to port ${port}`);
 })

@@ -1,6 +1,7 @@
 function Buttons () {
 
     const storedUser = localStorage.getItem("chat-user");
+
     if (!storedUser) {
         return (
             <div>
@@ -12,7 +13,7 @@ function Buttons () {
                         Login
                     </button>
                 </a>
-                <a href="/register">
+                <a href="/signup">
                     <button className="register-butt text-white cursor-pointer outline-none 
                     border-none text-base text-center transition-all 
                     duration-300 ease-linear relative bg-[#0d9221] 
@@ -23,13 +24,14 @@ function Buttons () {
             </div>
         )
     } else {
-    const user = JSON.parse(storedUser);
-
-    return (
-        <a href="#"><div>
-            <h3 className="webpage-butt text-xl text-center hover:text-[#0d9221]">{user.userName}</h3>
-        </div></a>
-    )
+        const user = JSON.parse(storedUser);
+        return (
+            <>
+                <a href="#"><div className="avatar bottom-4">
+                    <img className="webpage-butt size-16 rounded-full" src={user.profilePic} />
+                </div></a>
+            </>
+        )
     }
 }
 
