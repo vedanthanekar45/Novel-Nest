@@ -2,8 +2,8 @@ import Buttons from "../authentication_components/Buttons"
 
 function Navbar() {
         return (
-            <div>
-                <nav className="bg-white pb-7">
+            <div className="fixed overflow-hidden w-[100%]">
+                <nav className="bg-white pb-6">
                     <div className="logo text-[#0d9221] ml-14 mt-9 text-4xl">
                         <a href="/"><h2>NovelNest</h2></a>
                     </div>

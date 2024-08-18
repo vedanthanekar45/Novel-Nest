@@ -116,3 +116,11 @@ nav {
   border-radius: 25px;
   box-shadow: 0.5px 0.5px 1px 1px #006302;
 }
+
+/* FONTS */
+
+.cormorant-garamond-medium-italic {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  /* font-style: italic; */
+}
