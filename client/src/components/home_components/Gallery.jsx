@@ -1,5 +1,5 @@
 import React from "react"
-import gallery from "../../assets/gallery"
+import gallery from "../../hooks/gallery"
 
 const Gallery = () => {
     const [randomImage, setRandomImage] = React.useState(null);

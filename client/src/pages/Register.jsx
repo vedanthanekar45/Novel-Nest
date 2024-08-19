@@ -57,23 +57,23 @@ function Register() {
 
                         <input onChange={(e) => setInputs({...inputs, firstName: e.target.value})}
                         autoComplete='off' name="text" type="text" placeholder="First Name"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <input onChange={(e) => setInputs({...inputs, lastName: e.target.value})}
                         autoComplete='off' name="text" type="text" placeholder="Last Name"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <input onChange={(e) => setInputs({...inputs, email: e.target.value})}
                         autoComplete='off' name="email" type="text" placeholder="Email"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <input onChange={(e) => setInputs({...inputs, userName: e.target.value})}
                         autoComplete='off' name="username" type="text" placeholder="Set Username"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <input onChange={(e) => setInputs({...inputs, password: e.target.value})}
                         autoComplete='off' name="password" type="password" placeholder="Set Password"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <button className="bg-green-700 h-12 rounded-xl w-full text-white">Register</button>
                     </form>
