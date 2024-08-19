@@ -1,7 +1,7 @@
 function Info() {
     return (
         <div className="features relative inline-flex bg-[#28a40f]">
-            <div className="text-white text-xl text-center mt-20 feature-tile">
+            <div className="text-[#ffffff] text-xl text-center mt-20 feature-tile">
                 <img src="/public/assets/open-book.png" className="feature-icon ml-3" />
                 <h1 className="mt-4">Variety of categories <br></br>
                 to go through</h1>

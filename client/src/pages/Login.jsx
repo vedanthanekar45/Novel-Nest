@@ -57,11 +57,11 @@ function Login() {
 
                         <input onChange={(e) => setInputs({...inputs, userName: e.target.value})}
                         autoComplete='off' name="username" type="text" placeholder="Username"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <input onChange={(e) => setInputs({...inputs, password: e.target.value})}
                         autoComplete='off' name="password" type="password" placeholder="Password"
-                        className="block rounded-xl h-12 mb-6 p-4 w-full border-black border"/>
+                        className="block rounded-xl h-12 bg-white mb-6 p-4 w-full border-black border"/>
 
                         <button className="bg-green-700 h-12 rounded-xl w-full text-white">Login</button>
                     </form>
