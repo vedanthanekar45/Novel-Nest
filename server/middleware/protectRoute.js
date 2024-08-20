@@ -13,8 +13,9 @@ const protectRoute = async (req, res, next) => {
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-        req.user = await User.findById(decoded.id).select('-password');
-
+        // req.user = await User.findById(decoded._id).select('-password');
+        req.user = decoded;
+        console.log(req.user);
         next();
     } catch (error) {
         console.log('Error in protectRoute middleware:', error.message);

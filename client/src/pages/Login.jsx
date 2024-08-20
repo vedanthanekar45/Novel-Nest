@@ -66,7 +66,7 @@ function Login() {
                         <button className="bg-green-700 h-12 rounded-xl w-full text-white">Login</button>
                     </form>
                     <div className="blog-title flex justify-center z-2 text-2xl mt-6">
-                        <h1>Not a user yet? Register <a href='/register' className="text-green-700">here!</a></h1>
+                        <h1>Not a user yet? Register <a href='/signup' className="text-green-700">here!</a></h1>
                     </div>
                 </div>
             </div>

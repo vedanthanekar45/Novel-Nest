@@ -1,7 +1,14 @@
 import jwt from "jsonwebtoken"
 
 function generateToken(user, res) {
-    const token = jwt.sign({username: user.username}, process.env.JWT_SECRET, {
+    const payload = {
+        _id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        profilePic: user.profilePic, // Or whatever else you want to include
+    };
+
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: '10d'
     })
 
