@@ -5,25 +5,30 @@ import cookieParser from "cookie-parser"
 import bodyParser from "body-parser"
 
 import authRoutes from "./routes/authRoutes.js"
+import blogRoutes from "./routes/blogRoutes.js"
 import connectMongo from "./db/connectToMongo.js"
 // import protectRoute from "./middleware/protectRoute.js"
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors({}));
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}));
 dotenv.config();
 app.use(express.json())
 app.use(cookieParser());
 
 const port = process.env.port;
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    next();
-});
+// app.use((req, res, next) => {
+//     res.header('Access-Control-Allow-Origin', '*');
+//     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+// });
 
 app.use("/auth", authRoutes)
+app.use("/blog", blogRoutes)
 
 app.listen(port, () => {
     connectMongo();

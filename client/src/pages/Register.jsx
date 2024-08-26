@@ -46,6 +46,12 @@ function Register() {
         }
     }
 
+    // Password Show or Hide
+    const [showPassword, setShowPassword] = React.useState(false); // State to toggle visibility
+    const handleCheckboxChange = () => {
+      setShowPassword(!showPassword);
+    };
+
     return (
         <div>
             <div className="h-screen flex items-center justify-center">
@@ -72,8 +78,12 @@ function Register() {
                         className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
 
                         <input onChange={(e) => setInputs({...inputs, password: e.target.value})}
-                        autoComplete='off' name="password" type="password" placeholder="Set Password"
+                        autoComplete='off' name="password" type={showPassword ? 'text' : 'password'} placeholder="Set Password"
                         className="block rounded-xl bg-white h-12 mb-6 p-4 w-full border-black border"/>
+                        <label className="flex">
+                            <input type="checkbox" className="bg-white w-5 h-5 mb-4" checked={showPassword} onChange={handleCheckboxChange}/>
+                            <p className="blog-title ml-2">Show Password</p>
+                        </label>
 
                         <button className="bg-green-700 h-12 rounded-xl w-full text-white">Register</button>
                     </form>

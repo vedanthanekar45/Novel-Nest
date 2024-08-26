@@ -105,14 +105,14 @@ nav {
 /* CSS FOR LOGIN PAGE */
 .login-box {
   width: 500px;
-  height: 500px;
+  height: 540px;
   border-radius: 25px;
   box-shadow: 0.5px 0.5px 1px 1px #006302;
 }
 
 .register-box {
   width: 500px;
-  height: 650px;
+  height: 680px;
   border-radius: 25px;
   box-shadow: 0.5px 0.5px 1px 1px #006302;
 }
